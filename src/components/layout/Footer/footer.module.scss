@@ -1,0 +1,126 @@
+.footer {
+  background-color: #333;
+  color: #f7f7f7;
+  padding: 5rem 0;
+  
+  &_top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  
+  &_logo {
+    flex: 0 0 auto;
+  }
+  
+  &_avatar {
+    border-radius: 50%;
+    object-fit: contain; // Changed from cover to contain
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1); // Light background for transparent image
+    padding: 5px; // Add padding for better appearance
+  }
+  
+  &_content {
+    flex: 1;
+    display: flex;
+    gap: 5rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  
+  &_info {
+    flex: 1;
+    
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #55c57a;
+    }
+    
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #aaa;
+    }
+  }
+  
+  &_nav {
+    flex: 1;
+    
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #f7f7f7;
+    }
+  }
+  
+  &_list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  &_item {
+    margin-bottom: 1rem;
+  }
+  
+  &_link {
+    text-decoration: none;
+    color: #f7f7f7;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    
+    &:hover {
+      color: #55c57a;
+      padding-left: 3px;
+    }
+  }
+  
+  &_bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  .social_links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+  
+  .social_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: #55c57a;
+      transform: translateY(-3px);
+    }
+  }
+}

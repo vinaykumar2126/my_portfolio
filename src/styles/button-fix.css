@@ -1,0 +1,87 @@
+/* Fix for button hover and click issues */
+.btn, .resume-btn {
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+  user-select: none;
+}
+
+button.btn-primary, button.resume-btn {
+  cursor: pointer !important;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #55c57a;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+button.btn-primary:hover, button.resume-btn:hover {
+  background-color: #28b485 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-outline {
+  cursor: pointer !important;
+  background: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
+  padding: 1rem 2rem !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.btn-outline:hover {
+  background: white !important;
+  color: #111 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ensure hero-actions have proper positioning and z-index */
+.hero-actions {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* Fix particles layer to ensure it doesn't block interactions */
+.hero-particles {
+  pointer-events: none !important;
+}
+
+/* Make sure any animation layers don't block clicks */
+.hero-visual,
+.code-animation,
+.tech-orbit {
+  pointer-events: none;
+}
+
+/* Tech circles should be interactive */
+.tech-circle img {
+  pointer-events: auto;
+}
+
+/* Fix for potential navigation overlap */
+.main-nav {
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* Remove any potential transparent overlays */
+body::before,
+body::after,
+.hero-section::before,
+.hero-section::after {
+  pointer-events: none !important;
+}
