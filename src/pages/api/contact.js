@@ -1,14 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-type ResponseData = {
-  success: boolean;
-  message: string;
-}
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
-) {
+export default function handler(req, res) {
   // Only accept POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ 

@@ -10,18 +10,18 @@ export const debugOverlays = (): void => {
     
     if (style.position === 'absolute') {
       el.setAttribute('data-debug', 'absolute');
-      el.style.outline = '2px solid red';
+      (el as HTMLElement).style.outline = '2px solid red';
     }
     
     if (style.position === 'fixed') {
       el.setAttribute('data-debug', 'fixed');
-      el.style.outline = '2px solid blue';
+      (el as HTMLElement).style.outline = '2px solid blue';
     }
     
     const zIndex = parseInt(style.zIndex);
     if (!isNaN(zIndex) && zIndex > 10) {
       el.setAttribute('data-debug', 'high-z-index');
-      el.style.outline = '2px solid green';
+      (el as HTMLElement).style.outline = '2px solid green';
     }
   });
   
