@@ -31,7 +31,7 @@ const Footer = () => {
         <div className={styles.footer_top}>
           <div className={styles.footer_logo}>
             <Image 
-              src="/assets/DSC_9962.jpg" 
+              src="/assets/DSC_9962.png" 
               alt="Vinay Kumar Godavarti" 
               width={120} 
               height={120}

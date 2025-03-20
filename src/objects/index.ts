@@ -20,7 +20,7 @@ export const links = {
 export const Expriences = [
   {
     date: "August 2024 - Present",
-    logo: "/assets/work/Binghamton.png",
+    logo: "/assets/Binghamton.png",
     position: "Research Assistant",
     skills:
       "Docker , GitLab, JIRA, API REST, SOAP, Secure File Transfer Protocol, scrum, Node.js, Vue.js, MongoDB",
