@@ -5,15 +5,13 @@
 /.pnp
 .pnp.js
 
-/public/assets
-
 # testing
 /coverage
 test-server.js
 
-
 # next.js
 /out/
+.next
 
 # production
 /build
