@@ -4,22 +4,22 @@ import SkillCard from "../ui/SkillCard";
 const Skills = () => {
   const skills = [
     {
-      icon: "/assets/nodejs.svg",
+      icon: "/assets/nodejs.png",
       title: "Backend",
       description: "Node.js, Express, RESTful APIs, GraphQL"
     },
     {
-      icon: "/assets/prisma.svg",
+      icon: "/assets/prisma.png",
       title: "Database ORM",
       description: "Prisma, Mongoose, Type-safe database access"
     },
     {
-      icon: "/assets/mongodb.svg",
+      icon: "/assets/mongodb.png",
       title: "Database",
       description: "MongoDB, NoSQL solutions, Data modeling"
     },
     {
-      icon: "/assets/nextjs.svg",
+      icon: "/assets/nextjs.png",
       title: "Frontend",
       description: "React, Next.js, TypeScript, Responsive design"
     }
