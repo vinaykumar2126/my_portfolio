@@ -66,16 +66,16 @@ const Hero: React.FC<HeroProps> = ({ name, profession, handleNavClick, downloadC
               </div>
               <div className="tech-orbit">
                 <div className="tech-circle">
-                  <Image src="/assets/nodejs.svg" alt="Node.js" width={40} height={40} />
+                  <Image src="/assets/nodejs.png" alt="Node.js" width={40} height={40} />
                 </div>
                 <div className="tech-circle">
-                  <Image src="/assets/nextjs.svg" alt="Next.js" width={40} height={40} />
+                  <Image src="/assets/nextjs.png" alt="Next.js" width={40} height={40} />
                 </div>
                 <div className="tech-circle">
-                  <Image src="/assets/mongodb.svg" alt="MongoDB" width={40} height={40} />
+                  <Image src="/assets/mongodb.png" alt="MongoDB" width={40} height={40} />
                 </div>
                 <div className="tech-circle">
-                  <Image src="/assets/prisma.svg" alt="Prisma" width={40} height={50} />
+                  <Image src="/assets/prisma.png" alt="Prisma" width={40} height={50} />
                 </div>
               </div>
             </div>
