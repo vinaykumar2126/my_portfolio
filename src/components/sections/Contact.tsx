@@ -1,5 +1,7 @@
 import { GithubLogo, LinkedinLogo } from "phosphor-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+// Import as a CSS module
+import styles from "../../styles/contact.module.css";
 
 interface ContactProps {
   links: {
@@ -8,62 +10,155 @@ interface ContactProps {
   }
 }
 
-const Contact: React.FC<ContactProps> = ({ links }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
-  const [submitError, setSubmitError] = useState(false);
+// Animated Avatar component
+const AnimatedAvatar: React.FC = () => {
+  const [eyePosition, setEyePosition] = useState({ x: 0, y: 0 });
+  const [isWaving, setIsWaving] = useState(true); // Start with waving
+  const [isBlinking, setIsBlinking] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(true); // Start with speaking
+  const [message, setMessage] = useState("Hi there! I'm Vinay's virtual assistant!");
+  const avatarRef = useRef<HTMLDivElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage("");
-    setSubmitError(false);
+  // Handle mouse movement to track eye position
+  useEffect(() => {
+    // Start with initial animation
+    setTimeout(() => {
+      setIsSpeaking(false);
+    }, 3000);
     
-    // Store form reference to use later
-    const form = e.currentTarget;
+    setTimeout(() => {
+      setIsWaving(false);
+    }, 1500);
     
-    // Get form data
-    const formData = new FormData(form);
-    const formProps = Object.fromEntries(formData);
-    
-    try {
-      // Send data to our simple server
-      const response = await fetch('http://localhost:3001/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    // Auto-animate occasionally even without interaction
+    const autoAnimateInterval = setInterval(() => {
+      const animations = [
+        () => {
+          setIsWaving(true);
+          setTimeout(() => setIsWaving(false), 1500);
         },
-        body: JSON.stringify(formProps),
-      });
+        () => {
+          setIsSpeaking(true);
+          setMessage("Feel free to contact me via email or LinkedIn!");
+          setTimeout(() => setIsSpeaking(false), 3000);
+        },
+        () => {
+          setIsSpeaking(true);
+          setMessage("Check out my projects on GitHub!");
+          setTimeout(() => setIsSpeaking(false), 3000);
+        },
+        () => {
+          setIsSpeaking(true);
+          setMessage("Looking for a Passionate Developer you found one!");
+          setTimeout(() => setIsSpeaking(false), 3000);
+        }
+      ];
       
-      const data = await response.json();
-      
-      if (response.ok) {
-        setSubmitMessage("Thank you for your message! I'll get back to you soon.");
-        form.reset();
-      } else {
-        setSubmitError(true);
-        setSubmitMessage(data.message || "Failed to send message. Please try again.");
+      // Randomly select an animation
+      animations[Math.floor(Math.random() * animations.length)]();
+    }, 10000); // Run auto-animation every 10 seconds
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      if (avatarRef.current) {
+        const avatarRect = avatarRef.current.getBoundingClientRect();
+        const avatarCenterX = avatarRect.left + avatarRect.width / 2;
+        const avatarCenterY = avatarRect.top + avatarRect.height / 2;
+        
+        // Calculate direction from avatar center to mouse position
+        const deltaX = e.clientX - avatarCenterX;
+        const deltaY = e.clientY - avatarCenterY;
+        
+        // Normalize to a smaller range for subtle eye movements
+        const maxDistance = Math.max(window.innerWidth, window.innerHeight) / 2;
+        const normalizedX = Math.min(Math.max(deltaX / maxDistance, -1), 1) * 5;
+        const normalizedY = Math.min(Math.max(deltaY / maxDistance, -1), 1) * 5;
+        
+        setEyePosition({ x: normalizedX, y: normalizedY });
       }
-    } catch (error) {
-      console.error("Contact form error:", error);
-      
-      // If the email was likely sent but we got a network error
-      // Show a success message with a note about potential issues
-      setSubmitMessage("Your message was probably sent, but there was a connection issue. If you don't hear back, please try contacting me directly via email.");
-      setSubmitError(false);
-      
-      // Safely reset the form using the stored reference
-      try {
-        form.reset();
-      } catch (resetError) {
-        console.error("Could not reset form:", resetError);
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Random blinking
+    const blinkInterval = setInterval(() => {
+      setIsBlinking(true);
+      setTimeout(() => setIsBlinking(false), 200);
+    }, Math.random() * 3000 + 2000);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      clearInterval(blinkInterval);
+      clearInterval(autoAnimateInterval);
+    };
+  }, []);
+
+  // Handle click interactions
+  const handleClick = () => {
+    const messages = [
+      "Thanks for clicking! Feel free to contact me via email!",
+      "I'd love to connect with you on LinkedIn!",
+      "Check out my projects on GitHub!",
+      "I'm currently looking for new opportunities!",
+      "Let's build something amazing together!",
+      "Looking for a Passionate Developer you found one!"
+    ];
+    
+    setMessage(messages[Math.floor(Math.random() * messages.length)]);
+    setIsSpeaking(true);
+    
+    setTimeout(() => {
+      setIsSpeaking(false);
+    }, 3000);
+    
+    setIsWaving(true);
+    setTimeout(() => setIsWaving(false), 1500);
   };
 
+  return (
+    <div className={styles["avatar-container"]} ref={avatarRef} onClick={handleClick}>
+      {/* Speech bubble */}
+      <div className={`${styles["avatar-speech-bubble"]} ${isSpeaking ? styles.speaking : ''}`}>
+        <p>{message}</p>
+      </div>
+      
+      {/* Avatar illustration */}
+      <div className={styles["avatar-illustration"]}>
+        <div className={styles["avatar-head"]}>
+          {/* Eyes */}
+          <div className={styles["avatar-eyes"]}>
+            <div 
+              className={`${styles["avatar-eye"]} ${isBlinking ? styles.blinking : ''}`}
+              style={{
+                transform: `translate(${eyePosition.x}px, ${eyePosition.y}px)`
+              }}
+            >
+              <div className={styles["avatar-pupil"]}></div>
+            </div>
+            <div 
+              className={`${styles["avatar-eye"]} ${isBlinking ? styles.blinking : ''}`}
+              style={{
+                transform: `translate(${eyePosition.x}px, ${eyePosition.y}px)`
+              }}
+            >
+              <div className={styles["avatar-pupil"]}></div>
+            </div>
+          </div>
+          
+          {/* Mouth */}
+          <div className={`${styles["avatar-mouth"]} ${isSpeaking ? styles.speaking : ''}`}></div>
+        </div>
+        
+        {/* Body */}
+        <div className={styles["avatar-body"]}>
+          <div className={`${styles["avatar-arm"]} ${styles["avatar-left-arm"]} ${isWaving ? styles.waving : ''}`}></div>
+          <div className={`${styles["avatar-arm"]} ${styles["avatar-right-arm"]}`}></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Contact: React.FC<ContactProps> = ({ links }) => {
   return (
     <section className="section section-contact" id="contact">
       <div className="container">
@@ -88,7 +183,7 @@ const Contact: React.FC<ContactProps> = ({ links }) => {
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <a href="mailto:vgodavarti@gmail.com">gvk.kumar100@gmail.com</a>
+                  <a>gvk.kumar100@gmail.com</a>
                 </div>
               </div>
               
@@ -98,7 +193,7 @@ const Contact: React.FC<ContactProps> = ({ links }) => {
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <a href="tel:+1234567890">Available on request</a>
+                  <a>+16073491474</a>
                 </div>
               </div>
               
@@ -123,42 +218,9 @@ const Contact: React.FC<ContactProps> = ({ links }) => {
             </div>
           </div>
           
-          <div className="contact-form">
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Subject" required />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows={5} placeholder="Your message" required></textarea>
-              </div>
-              
-              <button 
-                type="submit" 
-                className="btn btn-primary"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
-              
-              {submitMessage && (
-                <div className={`form-message ${submitError ? 'error' : 'success'}`}>
-                  {submitMessage}
-                </div>
-              )}
-            </form>
+          {/* Replacing the contact form with an animated avatar */}
+          <div className={styles["avatar-wrapper"]}>
+            <AnimatedAvatar />
           </div>
         </div>
       </div>
