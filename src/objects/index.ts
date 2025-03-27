@@ -21,9 +21,9 @@ export const Expriences = [
   {
     date: "August 2024 - Present",
     logo: "/assets/Binghamton.png",
-    position: "Research Assistant",
+    position: "Graduate Research Assistant",
     skills:
-      "Docker , GitLab, JIRA, API REST, SOAP, Secure File Transfer Protocol, scrum, Node.js, Vue.js, MongoDB",
+      "vue.js, Node.js, MongoDB, Docker,API REST, GitLab, JIRA,Scrum ",
     companyName: "Binghamton University",
     workFrom: "(Remote)",
     link: "https://www.binghamton.edu/",
