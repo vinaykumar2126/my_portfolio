@@ -1,0 +1,60 @@
+/* Responsive fixes for mobile display */
+@media screen and (max-width: 768px) {
+  /* Fix container width on small screens */
+  .container {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Fix section padding on mobile */
+  .section {
+    padding: 7rem 0;
+  }
+  
+  /* Fix header text sizes */
+  .section-title {
+    font-size: 3rem !important;
+  }
+  
+  .section-subtitle {
+    font-size: 1.6rem !important;
+  }
+  
+  /* Fix potential overflow issues */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix image display */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Additional small-screen fixes */
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem !important;
+  }
+  
+  html {
+    font-size: 50%; /* Adjust base font size for very small screens */
+  }
+  
+  /* Fix contact form elements spacing */
+  .contact-method {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Fix meta viewport for proper mobile display */
+@-ms-viewport {
+  width: device-width;
+}

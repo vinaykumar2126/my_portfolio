@@ -13,30 +13,30 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ links }) => {
   const projects = [
     {
-      image: "/assets/project1.jpg",
+      image: "/assets/portfolio.png",
       title: "My Portfolio",
       tech: ["Next.js", "TypeScript", "SCSS"],
       description: "A personal portfolio website built with modern web technologies to showcase my skills, experience, and projects using responsive design principles.",
-      date: "2023",
+      // date: "2023",
       status: "completed",
       github: links.github,
       demo: links.project1
     },
     {
-      image: "/assets/project2.jpg",
-      title: "Bartenders Website",
+      image: "/assets/ipl.png",
+      title: "Ipl-Auction",
       tech: ["Node.js", "MongoDB", "React"],
-      description: "A full-stack application for bartenders to manage recipes, inventory, and showcase their skills with recipe creation and sharing functionality.",
-      date: "2022",
+      description: "Designed a sophisticated MERN Stack application simulating the dynamics of an IPL auction, featuring a user-friendly interface and robust backend architecture.",
+
       status: "completed",
       github: links.github,
       demo: links.project2
     },
     {
-      image: "/assets/project3.jpg",
-      title: "Burger Management System",
-      tech: ["Node.js", "MongoDB", "Vue.js"],
-      description: "An order management system for a burger restaurant with real-time updates, inventory tracking, and kitchen display system for efficient order processing.",
+      image: "/assets/resumai.png",
+      title: "AI Powered Resume Evaluator",
+      tech: ["Node.js", "MongoDB", "Next.js"],
+      description: "Showcased a full-stack application offering personalized feedback, scoring, and suggestions to help users optimize their resumes for job applications.",
       date: "2023",
       status: "in-progress",
       github: links.github,
@@ -55,9 +55,9 @@ const Projects: React.FC<ProjectsProps> = ({ links }) => {
         
         <div className="project-categories">
           <button className="category-btn active">All</button>
-          <button className="category-btn">Web App</button>
+          {/* <button className="category-btn">Web App</button>
           <button className="category-btn">Mobile</button>
-          <button className="category-btn">API</button>
+          <button className="category-btn">API</button> */}
         </div>
         
         <div className="projects-grid">

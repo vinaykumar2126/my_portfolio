@@ -27,7 +27,7 @@ export default function Home() {
   // Download CV function - modified to force download with fallback
   const downloadCV = () => {
     // First try direct fetch
-    fetch('/assets/resume.pdf')
+    fetch('/assets/!Resume_Vinay.pdf')
       .then(response => {
         response.blob().then(blob => {
           // Create a blob URL and trigger download

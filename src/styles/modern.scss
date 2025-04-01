@@ -943,6 +943,11 @@ body {
   gap: 4rem;
   margin-bottom: 6rem;
   
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+    gap: 3rem;
+  }
+  
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
   }
@@ -958,6 +963,10 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.03);
+    
+    @media (max-width: 576px) {
+      max-width: 100%;
+    }
     
     &:hover {
       transform: translateY(-15px);
@@ -988,8 +997,12 @@ body {
     
     .project-image {
       position: relative;
-      height: 25rem;
+      height: 28rem; // Increased from 25rem to 28rem
       overflow: hidden;
+      
+      @media (max-width: 576px) {
+        height: 24rem; // Increased from 22rem to 24rem
+      }
       
       &::before {
         content: '';
@@ -1062,20 +1075,28 @@ body {
     }
     
     .project-content {
-      padding: 3rem;
+      padding: 2.5rem; // Reduced from 3rem to 2.5rem
       transition: all 0.4s ease;
       background: white;
       flex: 1;
       display: flex;
       flex-direction: column;
       
+      @media (max-width: 576px) {
+        padding: 2rem 1.8rem; // Reduced from 2.5rem 2rem
+      }
+      
       .project-title {
         font-size: 2.2rem;
         color: #333;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem; // Reduced from 1.5rem
         font-weight: 600;
         position: relative;
-        padding-bottom: 1rem;
+        padding-bottom: 0.8rem; // Reduced from 1rem
+        
+        @media (max-width: 576px) {
+          font-size: 2rem;
+        }
         
         &::after {
           content: '';
@@ -1093,7 +1114,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem; // Reduced from 2rem
         
         .tech-tag {
           padding: 0.6rem 1.5rem;
@@ -1122,23 +1143,19 @@ body {
         font-size: 1.6rem;
         color: #666;
         line-height: 1.7;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem; // Reduced from 2.5rem
         flex: 1;
       }
       
       .project-meta {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; // Changed from space-between to center
         align-items: center;
-        padding-top: 1.5rem;
+        padding-top: 1rem; // Reduced from 1.5rem
         border-top: 1px solid rgba(0, 0, 0, 0.05);
         
         .project-date {
-          font-size: 1.3rem;
-          color: #999;
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
+          display: none; // Hide the date element completely
         }
         
         .project-status {
@@ -1234,22 +1251,40 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   
+  @media (max-width: 991px) {
+    gap: 3rem;
+  }
+  
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 4rem;
   }
   
   .contact-info {
     color: $white;
     
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+    
     h3 {
       font-size: 2.8rem;
       margin-bottom: 2rem;
+      
+      @media (max-width: 480px) {
+        font-size: 2.4rem;
+      }
     }
     
     p {
       font-size: 1.8rem;
       color: $gray;
       margin-bottom: 4rem;
+      
+      @media (max-width: 480px) {
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+      }
     }
     
     .contact-methods {
@@ -1258,10 +1293,24 @@ body {
       gap: 2.5rem;
       margin-bottom: 4rem;
       
+      @media (max-width: 768px) {
+        align-items: center;
+      }
+      
+      @media (max-width: 480px) {
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      
       .contact-method {
         display: flex;
         align-items: flex-start;
         gap: 2rem;
+        
+        @media (max-width: 480px) {
+          width: 100%;
+          max-width: 320px;
+        }
         
         .method-icon {
           width: 5rem;
@@ -1272,20 +1321,32 @@ body {
           align-items: center;
           justify-content: center;
           color: $primary-color;
+          flex-shrink: 0;
+          
+          @media (max-width: 480px) {
+            width: 4.5rem;
+            height: 4.5rem;
+          }
         }
         
         h4 {
           font-size: 2rem;
           margin-bottom: 0.5rem;
+          
+          @media (max-width: 480px) {
+            font-size: 1.8rem;
+          }
         }
         
-        a {
+        a, p {
           color: $gray;
           text-decoration: none;
           transition: $transition;
+          margin-bottom: 0;
+          word-break: break-word;
           
-          &:hover {
-            color: $primary-color;
+          @media (max-width: 480px) {
+            font-size: 1.5rem;
           }
         }
       }
@@ -1295,21 +1356,8 @@ body {
       display: flex;
       gap: 1.5rem;
       
-      .social-link {
-        width: 4.5rem;
-        height: 4.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
+      @media (max-width: 768px) {
         justify-content: center;
-        color: $white;
-        transition: $transition;
-        
-        &:hover {
-          background: $primary-color;
-          transform: translateY(-5px);
-        }
       }
     }
   }

@@ -10,9 +10,9 @@ export const contact = {
 export const links = {
   linkedin: "https://www.linkedin.com/in/vinay-kumar-godavarti/",
   github: 'https://github.com/vinaykumar2126',
-  project1: 'https://github.com/wellpinho/portfolio-nextjs',
-  project2: 'https://github.com/wellpinho/exoticdrinks',
-  project3: 'https://github.com/wellpinho/vue-burguer',
+  project1: '#',
+  project2: '#',
+  project3: '#',
   sponsor: '#',
   cv: 'https://drive.google.com/file/d/1Yk8E6UKQ9g-sNcGJb7MRnBFgjH_pmkMQ/view?usp=sharing'
 }
@@ -46,60 +46,5 @@ export const Expriences = [
     workFrom: "(Remote)",
     link: "/",
   },
-  // {
-  //   date: "2017 - 2019",
-  //   logo: "/assets/work/evasofis.jpeg",
-  //   position: "Full Stack Development",
-  //   skills: "NodeJS, React, SASS, SQL",
-  //   companyName: "Evasofis",
-  //   workFrom: "(Hybrid)",
-  //   link: "/",
-  // },
-  // {
-  //   date: "2010 - 2017",
-  //   logo: "/assets/work/1.png",
-  //   position: "Freelance",
-  //   skills: "Javascript, html and CSS, sql",
-  //   companyName: "Ver & Comprar",
-  //   workFrom: "(Home work)",
-  //   link: "/",
-  // },
+  
 ];
-
-export const linkedinRecommendations = [
-  {
-    image: '/assets/barba.jpeg',
-    name: 'George Ferreira',
-    skills: 'Software Developer',
-    linkedin: 'https://www.linkedin.com/in/georgegf/',
-    text: '',
-  },
-  {
-    image: '/assets/josh.jpeg',
-    name: 'Josseandro Farias',
-    skills: 'Full Stack Developer | Ahgora',
-    linkedin: 'https://www.linkedin.com/in/josseandrofarias/',
-    text: '',
-  },
-  {
-    image: '/assets/rafael.jpeg',
-    name: 'Raphael Yeshaya',
-    skills: 'Social Media Digital Martketing',
-    linkedin: 'https://www.linkedin.com/in/rafaelyeshaya/',
-    text: '',
-  },
-  {
-    image: '/assets/roland.jpeg',
-    name: 'Roland Schütz',
-    skills: ' Ich entwickle ambitionierte Web-Apps und erfolgreiche Webseiten. Ich bin ViennaJS Organizer, Neos CMS Core Contributor',
-    linkedin: 'https://www.linkedin.com/in/roland-schuetz/',
-    text: '',
-  },
-  {
-    image: '/assets/will.jpeg',
-    name: 'William Martins',
-    skills: 'Full Stack Developer | Full Stack Engineer | Scrum Master | Agile Coach',
-    linkedin: 'https://www.linkedin.com/in/willianmartinsdeveloper/',
-    text: 'Wellington é um profissional muito dedicado, está sempre pronto a ajudar os colegas e aberto para aprender novas tecnologias.',
-  },
-]
