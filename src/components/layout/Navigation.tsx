@@ -24,48 +24,50 @@ const Navigation: React.FC<NavigationProps> = ({ links, handleNavClick, download
   }, []);
 
   return (
-    <nav className={`main-nav ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <div className="nav-content">
-          <div className="nav-logo">
-            <Link href="/">
-              <span>V<span className="highlight">K</span></span>
-            </Link>
-          </div>
-          
-          <div className="nav-links">
-            <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
-            <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
-            <a href="#experience" onClick={(e) => handleNavClick(e, 'work-experience')}>Experience</a>
-            <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
-            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
-          </div>
-          
-          <div className="nav-actions">
-            <a href={links.github} target="_blank" rel="noopener noreferrer" className="social-icon">
-              <GithubLogo size={20} weight="fill" />
-            </a>
-            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
-              <LinkedinLogo size={20} weight="fill" />
-            </a>
-            <button 
-              onClick={downloadCV} 
-              type="button" 
-              className="resume-btn"
-              style={{ cursor: 'pointer', position: 'relative', zIndex: 1001 }}
-            >
-              Resume <FilePdf size={16} />
+    <>
+      <nav className={`main-nav ${scrolled ? 'scrolled' : ''}`}>
+        <div className="container">
+          <div className="nav-content">
+            <div className="nav-logo">
+              <Link href="/">
+                <span>V<span className="highlight">K</span></span>
+              </Link>
+            </div>
+            
+            <div className="nav-links">
+              <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
+              <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a>
+              <a href="#experience" onClick={(e) => handleNavClick(e, 'work-experience')}>Experience</a>
+              <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
+            </div>
+            
+            <div className="nav-actions">
+              <a href={links.github} target="_blank" rel="noopener noreferrer" className="social-icon">
+                <GithubLogo size={20} weight="fill" />
+              </a>
+              <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
+                <LinkedinLogo size={20} weight="fill" />
+              </a>
+              <button 
+                onClick={() => window.open("https://drive.google.com/file/d/1Yk8E6UKQ9g-sNcGJb7MRnBFgjH_pmkMQ/view?usp=sharing", "_blank")} 
+                type="button" 
+                className="resume-btn"
+                style={{ cursor: 'pointer', position: 'relative', zIndex: 1001 }}
+              >
+                Resume <FilePdf size={16} />
+              </button>
+            </div>
+            
+            <button className="menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
           </div>
-          
-          <button className="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
