@@ -10,9 +10,9 @@ export const contact = {
 export const links = {
   linkedin: "https://www.linkedin.com/in/vinay-kumar-godavarti/",
   github: 'https://github.com/vinaykumar2126',
-  project1: '#',
-  project2: '#',
-  project3: '#',
+  project1: 'https://github.com/vinaykumar2126/my_portfolio.git',
+  project2: 'https://github.com/vinaykumar2126/IPL_AUCTION.git',
+  project3: 'https://github.com/vinaykumar2126/Resume_Evaluator-GenAI.git',
   sponsor: '#',
   cv: 'https://drive.google.com/file/d/1Yk8E6UKQ9g-sNcGJb7MRnBFgjH_pmkMQ/view?usp=sharing'
 }
