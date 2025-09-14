@@ -50,7 +50,7 @@ const Projects: React.FC<ProjectsProps> = ({ links }) => {
       tech: ["Node.js", "MongoDB", "Next.js"],
       description: "Showcased a full-stack application offering personalized feedback, scoring, and suggestions to help users optimize their resumes for job applications.",
       date: "2023", // Make date required
-      status: "in-progress",
+      status: "Completed and Live",
       github: links.project3, // Changed from links.github to links.project3
       demo: links.project3
     }

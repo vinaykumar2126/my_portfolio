@@ -30,7 +30,7 @@ const About: React.FC<AboutProps> = ({ handleNavClick }) => {
           <div className="about-text">
             <p>
               The curiosity to understand the technology gears was the beginning. 
-              I started with Python and never stopped! I love facing new challenges 
+              I started with Java and never stopped! I love facing new challenges 
               because they teach and strengthen me.
             </p>
             
