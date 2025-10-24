@@ -1,0 +1,96 @@
+.contactImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100%;
+}
+
+.imageFrame {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border: 6px solid rgba(85, 197, 122, 0.2);
+  background: linear-gradient(145deg, rgba(17, 17, 17, 0.2), rgba(30, 30, 30, 0.4));
+  width: 100%;
+  max-width: 380px;
+  height: 450px;
+  position: relative;
+  transform: perspective(1200px) rotateY(-5deg) rotateX(3deg);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.imageFrame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(85, 197, 122, 0.2), transparent);
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.imageFrame::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(85, 197, 122, 0.3) 0%, transparent 70%);
+  border-radius: 30px;
+  filter: blur(15px);
+  opacity: 0.6;
+}
+
+.imageFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+.imageFrame:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.03);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(85, 197, 122, 0.3);
+  border-color: rgba(85, 197, 122, 0.4);
+}
+
+.imageFrame:hover img {
+  transform: scale(1.05);
+  filter: contrast(1.1) brightness(1.05);
+}
+
+/* Improved mobile responsiveness */
+@media (max-width: 991px) {
+  .imageFrame {
+    max-width: 340px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactImage {
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .imageFrame {
+    max-width: 100%;
+    height: 380px;
+    transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .imageFrame {
+    height: 350px;
+    border-width: 4px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+}
