@@ -50,7 +50,7 @@ const Navigation: React.FC<NavigationProps> = ({ links, handleNavClick, download
                 <LinkedinLogo size={20} weight="fill" />
               </a>
               <button 
-                onClick={() => window.open("https://drive.google.com/file/d/1miU5jzq4Cjk83tDmtqPohFpwpFNnKSKo/view?usp=sharing")} 
+                onClick={() => window.open("")} 
                 type="button" 
                 className="resume-btn"
                 style={{ cursor: 'pointer', position: 'relative', zIndex: 1001 }}
