@@ -23,7 +23,7 @@ export const Expriences = [
     logo: "/assets/Binghamton.png",
     position: "Software engineer",
     skills:
-      "Next.js, TypeScript, Node.js, Microsoft SQL Server (Azure SQL Database), Docker, JIRA,Scrum ",
+      "Next.js, TypeScript, Node.js, Redis, Microsoft SQL Server (Azure SQL Database), Docker, JIRA,Scrum ",
     companyName: "Binghamton University",
     workFrom: "Binghamton, NY",
     link: "https://www.binghamton.edu/",
@@ -40,10 +40,10 @@ export const Expriences = [
 
   {
     date: "May 2020 - June 2023",
-    logo: "/assets/Darwinbox.webp",
+    logo: "/assets/edufund.png",
     position: "Software Engineer",
-    skills: "React.js, AWS, Node.js, TypeScript, AWS ECS, RDS",
-    companyName: "Darwinbox",
+    skills: "React.js, Node.js, TypeScript, Docker, AWS ECS, RDS",
+    companyName: "EduFund",
     workFrom: "(Remote)",
     link: "/",
   },
