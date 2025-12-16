@@ -36,8 +36,8 @@ const About: React.FC<AboutProps> = ({ handleNavClick }) => {
             
             <div className="about-stats">
               <div className="stat-item">
-                <div className="stat-number">Fresher</div>
-                <div className="stat-label">Seeking entry-level positions</div>
+                <div className="stat-number">Craftman</div>
+                <div className="stat-label">Seeking new opportunities</div>
               </div>
               
               <div className="stat-item">

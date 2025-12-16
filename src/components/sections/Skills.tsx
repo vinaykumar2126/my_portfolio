@@ -6,7 +6,7 @@ const Skills = () => {
     {
       icon: "/assets/nodejs.png",
       title: "Backend",
-      description: "Node.js, Express, RESTful APIs, GraphQL"
+      description: "Java SpringBoot , Node.js, Express, RESTful APIs, GraphQL"
     },
     {
       icon: "/assets/prisma.png",

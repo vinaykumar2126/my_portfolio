@@ -39,7 +39,7 @@ export const Expriences = [
   },
 
   {
-    date: "May 2020 - June 2023",
+    date: "March 2022 - July 2023",
     logo: "/assets/edufund.png",
     position: "Software Engineer",
     skills: "React.js, Node.js, TypeScript, Docker, AWS ECS, RDS",
