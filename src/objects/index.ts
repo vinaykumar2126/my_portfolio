@@ -44,7 +44,7 @@ export const Expriences = [
     position: "Software Engineer",
     skills: "React.js, Node.js, TypeScript, Docker, AWS ECS, RDS",
     companyName: "EduFund",
-    workFrom: "Ahmedabad,Remote",
+    workFrom: "Ahmedabad,GJ",
     link: "/",
   },
   

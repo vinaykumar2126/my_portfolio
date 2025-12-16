@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({ name, profession, handleNavClick, downloadC
                     <span className="code-keyword">const</span> <span className="code-variable">developer</span> = {'{'} <br />
                       &nbsp;&nbsp;name: <span className="code-string">"{name}"</span>, <br />
                       &nbsp;&nbsp;role: <span className="code-string">"{profession}"</span>, <br />
-                      &nbsp;&nbsp;skills: [<span className="code-string">"React"</span>, <span className="code-string">"NextJS"</span>, <span className="code-string">"NodeJS"</span>], <br />
+                      &nbsp;&nbsp;skills: [<span className="code-string">"React"</span>, <span className="code-string">"Java Spring Boot"</span>, <span className="code-string">"NodeJS"</span>], <br />
                       &nbsp;&nbsp;passion: <span className="code-string">"Building digital experiences"</span> <br />
                     {'}'}; 
                   </code></pre>
